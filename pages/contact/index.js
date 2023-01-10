@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Contact = () => {
+const Contact = (props) => {
+    const { isOpen } = props;
     return (
-        <div className='screen contact'>
+        <div className='screen contact '>
             <h1>Contact</h1>
-
         </div>
     );
 };

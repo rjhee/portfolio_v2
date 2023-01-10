@@ -2,7 +2,7 @@ import React from 'react';
 import CloseButton from "./closeButton";
 
 const CommonModal = (props) => {
-    const {isOpen, setIsOpen} = props;
+    const {contents, isOpen, setIsOpen} = props;
     return (
        <>
            {isOpen === true
@@ -11,7 +11,9 @@ const CommonModal = (props) => {
                        <div className='absolute right-3'>
                            <CloseButton isOpen={isOpen} onClick={setIsOpen}/>
                        </div>
-                       <div></div>
+                       <div>
+                           {contents}
+                       </div>
                    </div>
                </div>
                : null
