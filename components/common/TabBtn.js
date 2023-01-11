@@ -1,25 +1,42 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 const TabBtn = (props) => {
     const {tab, selected, tabTitle, onClick, color} = props;
-    let style = color ? color : 'sky'
+
 
     function isSelected() {
         if(tab === selected) {
-            return <div className={`w-full h-1 bg-${style}-700 rounded-sm`}/>
+            return (
+                <>
+                    <button
+                        className={`font-bold text-lg text-blue-600`}
+                        onClick={()=> onClick(tab)}>
+                        <span>{tabTitle ? tabTitle : 'Tab'+tab}</span>
+                    </button>
+                    <span className='h-1 w-full bg-blue-500 rounded-full'/>
+                </>
+            )
         }
-        return  <div className={`w-full h-1 bg-white rounded-sm`}/>
+        return (
+            <>
+                <button
+                    className={`font-bold text-lg text-gray-500`}
+                    onClick={()=> onClick(tab)}>
+                    <span>{tabTitle ? tabTitle : 'Tab'+tab}</span>
+                </button>
+                <span className='h-1 w-full bg-white rounded-full'/>
+            </>
+        )
     }
 
     return (
         <div className='flex flex-col justify-end items-center w-24 h-10'>
-           <button
-               className={`font-bold text-lg text-${style}-700`}
-               onClick={()=> onClick(tab)}>
-               {tabTitle ? tabTitle : 'Tab1'}
-           </button>
+            {/*<button*/}
+            {/*    className={`font-bold text-lg text-gray-500`}*/}
+            {/*    onClick={()=> onClick(tab)}>*/}
+            {/*    <span>{tabTitle ? tabTitle : 'Tab'+tab}</span>*/}
+            {/*</button>*/}
             {isSelected()}
-            <div className={`w-full h-1 bg-${style}-700 rounded-sm`}/>
         </div>
     );
 };
