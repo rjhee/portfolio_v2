@@ -10,6 +10,15 @@ body {
   font-family: 'Rowdies', cursive;
 }
 
+.mainText {
+  color: rgb(8 145 178);
+/*  cyan-600 */
+}
+
+.mainBg {
+  background-color: rgb(8 145 178);
+}
+
 .screen {
   width: 100%;
   height: 100vh;
