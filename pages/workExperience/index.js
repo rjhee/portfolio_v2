@@ -8,13 +8,11 @@ const workExperience = () => {
 
     return (
         <div className='screen workExperience border'>
-            <h1>workExperience</h1>
-            <div className='grid grid-cols-1 md:grid-cols-4 md:grid-flow-col'>
+            <div className='grid grid-cols-2 md:grid-cols-2 md:grid-flow-col'>
              <Link href='/workExperience/detail'>
                  <WorkCard
                      title={'Title'}
-                     img={'/assets/img/html.jpg'}
-                     contents={'project description'}/>
+                     contents={'project description project description project description'}/>
              </Link>
                 <WorkCard/>
                 <WorkCard/>
