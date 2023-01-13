@@ -4,7 +4,6 @@ import CommonModal from "../../components/common/commonModal";
 import Link from "next/link";
 
 const workPages = () => {
-    const [isOpen, setIsOpen] = useState(false);
     const [workData, setWorkData] = useState([]);
 
     useEffect(()=>{
