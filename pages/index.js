@@ -2,10 +2,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
-import Contact from "./contact";
-import Projects from "./projects";
-import Skills from "./skills";
-import WorkExperience from "./workExperience";
+import ContactPage from "./contact";
+import ProjectsPage from "./projects";
+import SkillsPage from "./skills";
+import WorkPage from "./work";
 import NavMenu from "../components/navMenu";
 import Header from "../components/common/header";
 import {useState} from "react";
@@ -30,10 +30,10 @@ export default function Home() {
       <main className={styles.main}>
         <NavMenu isOpen={isMenu} setIsOpen={()=> setIsMenu(!isMenu)}/>
         <Header onClick={()=> setIsMenu(!isMenu)}/>
-        <Contact/>
-        <Projects/>
-        <Skills/>
-          <WorkExperience/>
+        {/*<ContactPage/>*/}
+        <ProjectsPage/>
+        <SkillsPage/>
+        <WorkPage/>
       </main>
     </>
   )

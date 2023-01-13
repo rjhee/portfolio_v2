@@ -1,7 +1,7 @@
 import React from 'react';
 import SkillCard from "../../components/skills/skillCard";
 
-const Skills = () => {
+const SkillsPage = () => {
     return (
         <div className='screen bg-slate-200	'>
             <SkillCard/>
@@ -10,4 +10,4 @@ const Skills = () => {
     );
 };
 
-export default Skills;
+export default SkillsPage;

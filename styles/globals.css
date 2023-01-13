@@ -6,6 +6,10 @@ body {
   font-family: 'Sofia Sans', sans-serif;
 }
 
+li {
+  list-style: none;
+}
+
 .titleFont {
   font-family: 'Rowdies', cursive;
 }
