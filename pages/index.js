@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -14,6 +15,21 @@ import useWindowDimensions from '../components/common/windowDimensions';
 import Anchor from '../components/common/Anchor';
 
 const inter = Inter({ subsets: ['latin'] });
+=======
+import Head from 'next/head'
+import Image from 'next/image'
+import { Inter } from '@next/font/google'
+import styles from '../styles/Home.module.css'
+import ContactPage from "./contact";
+import ProjectsPage from "./projects";
+import SkillsPage from "./skills";
+import WorkPage from "./work";
+import NavMenu from "../components/navMenu";
+import Header from "../components/common/header";
+import {useState} from "react";
+
+const inter = Inter({ subsets: ['latin'] })
+>>>>>>> 2740c29c41df6272c487840d86e141ef30edc944
 
 export default function Home() {
   const [isMenu, setIsMenu] = useState(false);
@@ -221,6 +237,7 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
+<<<<<<< HEAD
       <main
         className={styles.main}
         style={{ position: 'relative', top: -pageScrollTop + 'px' }}
@@ -232,6 +249,15 @@ export default function Home() {
         <Skills anchor={2} />
         <WorkExperience anchor={3} />
         <Contact anchor={4} />
+=======
+      <main className={styles.main}>
+        <NavMenu isOpen={isMenu} setIsOpen={()=> setIsMenu(!isMenu)}/>
+        <Header onClick={()=> setIsMenu(!isMenu)}/>
+        {/*<ContactPage/>*/}
+        <ProjectsPage/>
+        <SkillsPage/>
+        <WorkPage/>
+>>>>>>> 2740c29c41df6272c487840d86e141ef30edc944
       </main>
       <Anchor
         data={menu}

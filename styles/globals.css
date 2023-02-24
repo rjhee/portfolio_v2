@@ -11,6 +11,10 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+li {
+  list-style: none;
+}
+
 .titleFont {
   /* font-family: 'Rowdies', cursive; */
   font-family: 'Jua', sans-serif;

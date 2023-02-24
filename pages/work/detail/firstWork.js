@@ -1,12 +1,13 @@
 import React from 'react';
 import TabComponent from "../../../components/common/TabComponent";
 
-const Index = () => {
+const FirstWork = () => {
     return (
         <div>
-           <TabComponent/>
+            first
+            <TabComponent/>
         </div>
     );
 };
 
-export default Index;
+export default FirstWork;

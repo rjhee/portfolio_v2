@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'phone': "url('/assets/img/phone.png')",
+      },
       keyframes: {
         slideShow: {
           '0%': { transform: 'translateX(-100%)' },

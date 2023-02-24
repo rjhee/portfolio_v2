@@ -4,7 +4,7 @@ import Image from "next/image";
 const WorkCard = (props) => {
     const {img, title, contents} = props;
     return (
-        <div className=' flex flex-col justify-between drop-shadow-lg rounded-md bg-white
+        <div className='flex flex-col justify-between drop-shadow-lg rounded-md bg-white
                     m-2 hover:drop-shadow-2xl cursor-pointer transition-shadow
                     md:flex-col justify-center items-center '>
             <div className='w-full h-32 mb-1'>
