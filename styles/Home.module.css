@@ -1,4 +1,11 @@
 .main {
+  height: 100%;
+  transition: top 700ms ease 0s;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+}
+.main::-webkit-scrollbar {
+  display: none;
 }
 
 .description {

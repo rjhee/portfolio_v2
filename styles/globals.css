@@ -4,15 +4,25 @@
 
 body {
   font-family: 'Sofia Sans', sans-serif;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .titleFont {
-  font-family: 'Rowdies', cursive;
+  /* font-family: 'Rowdies', cursive; */
+  font-family: 'Jua', sans-serif;
 }
 
 .mainText {
   color: rgb(8 145 178);
-/*  cyan-600 */
+  /*  cyan-600 */
+}
+
+.shadowText {
+  color: #c3def9;
 }
 
 .mainBg {
@@ -22,4 +32,50 @@ body {
 .screen {
   width: 100%;
   height: 100vh;
+}
+
+.pageIndex {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  z-index: 1000;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageIndex > li {
+  list-style: none;
+  margin-bottom: 6px;
+  width: 100%;
+  height: auto;
+  opacity: 0.5;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.pageIndex > li > button,
+.pageIndex > li > a {
+  font-family: 'Passion One', cursive;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  display: flex;
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+.pageIndex > li > a:hover {
+  opacity: 1;
+}
+
+.pageIndex > .currentLi {
+  opacity: 1;
+  font-size: 1.5rem;
+  height: auto;
+  font-weight: 900;
 }
