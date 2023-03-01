@@ -15,9 +15,17 @@ li {
   list-style: none;
 }
 
-.titleFont {
+.titleFont-kr {
   /* font-family: 'Rowdies', cursive; */
   font-family: 'Jua', sans-serif;
+}
+
+.titleFont-en {
+  font-family: 'Passion One', cursive;
+}
+
+.subFont-en {
+  font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
 .mainText {
@@ -27,6 +35,10 @@ li {
 
 .shadowText {
   color: #c3def9;
+}
+
+.baigeBg {
+  background-color: #f9f9f9;
 }
 
 .mainBg {

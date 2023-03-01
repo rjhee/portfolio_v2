@@ -1,62 +1,65 @@
-<<<<<<< HEAD
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { Inter } from '@next/font/google';
 import styles from '../styles/Home.module.css';
-import Contact from './contact';
+import Main from './main';
 import Projects from './projects';
 import Profile from './Profile';
 import Skills from './skills';
-import WorkExperience from './workExperience';
+import Work from './work';
 import NavMenu from '../components/navMenu';
 import Header from '../components/common/header';
 import useWindowDimensions from '../components/common/windowDimensions';
 import Anchor from '../components/common/Anchor';
+import {
+  BsFillBookFill,
+  BsFillDisplayFill,
+  BsFillGiftFill,
+  BsFillHouseFill,
+  BsFillPersonFill,
+  BsFillTerminalFill,
+  BsFolder,
+  BsFolder2Open,
+  BsGem,
+  BsHouseDoor,
+  BsPencil,
+  BsPerson,
+} from 'react-icons/bs';
 
 const inter = Inter({ subsets: ['latin'] });
-=======
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
-import ContactPage from "./contact";
-import ProjectsPage from "./projects";
-import SkillsPage from "./skills";
-import WorkPage from "./work";
-import NavMenu from "../components/navMenu";
-import Header from "../components/common/header";
-import {useState} from "react";
-
-const inter = Inter({ subsets: ['latin'] })
->>>>>>> 2740c29c41df6272c487840d86e141ef30edc944
 
 export default function Home() {
   const [isMenu, setIsMenu] = useState(false);
   const menu = [
     {
+      name: 'main',
+      path: '#main',
+      icon: <BsFillHouseFill />,
+      state: true,
+    },
+    {
       name: 'profile',
       path: '#profile',
-      state: true,
-    },
-    {
-      name: 'project',
-      path: '#project',
-      state: true,
-    },
-    {
-      name: 'skills',
-      path: '#skills',
+      icon: <BsFillPersonFill />,
       state: true,
     },
     {
       name: 'work',
       path: '#work',
+      icon: <BsFillDisplayFill />,
       state: true,
     },
     {
-      name: 'contact',
-      path: '#contact',
+      name: 'skills',
+      path: '#skills',
+      icon: <BsFillTerminalFill />,
+      state: true,
+    },
+    {
+      name: 'project',
+      path: '#project',
+      icon: <BsFillBookFill />,
       state: true,
     },
   ];
@@ -236,28 +239,25 @@ export default function Home() {
           href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700&display=swap"
           rel="stylesheet"
         />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap"
+          rel="stylesheet"
+        />
       </Head>
-<<<<<<< HEAD
+
       <main
         className={styles.main}
         style={{ position: 'relative', top: -pageScrollTop + 'px' }}
       >
         {/* <NavMenu isOpen={isMenu} setIsOpen={() => setIsMenu(!isMenu)} /> */}
         {/* <Header onClick={()=> setIsMenu(!isMenu)}/> */}
-        <Profile anchor={0} />
-        <Projects anchor={1} />
-        <Skills anchor={2} />
-        <WorkExperience anchor={3} />
-        <Contact anchor={4} />
-=======
-      <main className={styles.main}>
-        <NavMenu isOpen={isMenu} setIsOpen={()=> setIsMenu(!isMenu)}/>
-        <Header onClick={()=> setIsMenu(!isMenu)}/>
-        {/*<ContactPage/>*/}
-        <ProjectsPage/>
-        <SkillsPage/>
-        <WorkPage/>
->>>>>>> 2740c29c41df6272c487840d86e141ef30edc944
+        <Main anchor={0} />
+        <Profile anchor={1} />
+        <Work anchor={2} />
+        <Skills anchor={3} />
+        <Projects anchor={4} />
       </main>
       <Anchor
         data={menu}

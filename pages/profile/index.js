@@ -1,39 +1,43 @@
-import Image from 'next/image';
-import React from 'react';
-import useWindowDimensions from '../../components/common/windowDimensions';
-import img from '../../public/assets/img/profile.png';
+import React, { useState } from 'react';
+import Logo from '../../components/common/logo';
+import BackBtn from '../../components/profile/backBtn';
+import ProfileCardBack from '../../components/profile/profileCardBack';
+import ProfileCardFront from '../../components/profile/profileCardFront';
 
 const Profile = (props) => {
-  const { anchor } = props;
+  const { isOpen, anchor } = props;
 
-  const { height, width } = useWindowDimensions();
+  const [isFront, setIsFront] = useState(true);
+  const [slide, setSlide] = useState(0);
+  const [opaciting, setOpacitiong] = useState(1);
+
+  function rotateCard(e) {
+    // let SLIDE_TIME = 0;
+    // let OPACITY_TIME = 1;
+    // setTimeout(() => {
+    //   setSlide(-100);
+    //   setOpacitiong(0);
+    // }, 2000);
+    setIsFront(!isFront);
+  }
+
   return (
     <div
       data-anchor={anchor}
-      className="screen projects relative overflow-hidden"
+      className="screen contact relative flex flex-col items-center justify-center"
     >
-      <div className="w-full h-4/5 absolute bottom-0 left-1/2 -translate-x-1/2 overflow-hidden z-50	">
-        <Image
-          src={img}
-          alt="project image"
-          width={'100%'}
-          height={'auto'}
-          className="h-full w-auto mx-auto"
-        />
+      <div
+        className="w-9/12 h-3/4"
+        style={{
+          opacity: opaciting,
+          transform: `translateX(${slide}%)`,
+          boxShadow: ['20px 20px 60px #bebebe', '-20px -20px 60px #ffffff'],
+        }}
+      >
+        {isFront === true ? <ProfileCardFront /> : <ProfileCardBack />}
       </div>
-      <div className="w-full flex flex-col items-center justify-center my-10">
-        <span className="titleFont mainText text-8xl font-black">
-          안녕하세요,
-        </span>
-        <span className="titleFont mainText text-9xl font-black relative">
-          저는 무슨무슨
-          <span className="titleFont shadowText text-9xl font-black absolute top-2 left-2 w-full">
-            저는 무슨무슨
-          </span>
-        </span>
-        <span className="titleFont mainText text-8xl font-black">
-          프론트엔드 개발자 입니다.
-        </span>
+      <div className="fixed right-12 cursor-pointer hover:scale-125	 transition-all	">
+        <BackBtn onClick={rotateCard} />
       </div>
     </div>
   );
